@@ -1,6 +1,5 @@
 import { getBookFormIds, getBookForms, getBookshelves } from '@/lib/api';
-import { BookGrid } from '@/components/BookGrid';
-import { Pagination } from '@/components/ui/pagination';
+
 import Link from 'next/link';
 import { ChevronLeft } from 'lucide-react';
 import { Suspense } from 'react';
@@ -11,22 +10,28 @@ import { ShelfContent } from './ShelfContent';
 const BOOKS_PER_PAGE = 20;
 
 // Cette fonction est requise pour la génération statique du site
-export async function generateStaticParams() {
-  const shelves = await getBookshelves();
-  return shelves.map((shelf) => ({
-    id: shelf.id,
-  }));
-}
+// export async function generateStaticParams() {
+//   const shelves = await getBookshelves();
+//   return shelves.map((shelf) => ({
+//     id: shelf.id,
+//   }));
+// }
 
 export default async function ShelfPage({
   params,
   searchParams,
 }: {
-  params: { id: string };
-  searchParams: { page?: string };
+  params: Promise<{ id: string }>;
+  searchParams: Promise<{ page?: string }>;
 }) {
-  const { id } = await params;
-  const currentPage = Number(await searchParams.page) || 1;
+  const [resolvedParams, resolvedSearchParams] = await Promise.all([
+    params,
+    searchParams,
+  ]);
+
+  const { id } = resolvedParams;
+  const { page } = resolvedSearchParams;
+  const currentPage = Number(page) || 1;
   const offset = (currentPage - 1) * BOOKS_PER_PAGE;
   
   // Récupère à la fois les infos de l'étagère et les IDs des livres

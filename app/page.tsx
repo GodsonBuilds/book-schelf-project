@@ -9,15 +9,17 @@ import { BookOpen, Star, Users, Bookmark } from 'lucide-react';
 const SHELVES_PER_PAGE = 6;
 
 export default async function Home({
-  searchParams,
+  searchParams: searchParamsPromise,
 }: {
-  searchParams: { page?: string };
+  searchParams: Promise<{ page?: string }>;
 }) {
-  const page = searchParams?.page;
+  const { page } = await searchParamsPromise;
+
   const currentPage = page ? Number(page) : 1;
   const offset = (currentPage - 1) * SHELVES_PER_PAGE;
-  
+
   // Récupération des étagères avec pagination
+  
   const shelves = await getBookshelves(offset, SHELVES_PER_PAGE);
   
   // Pour simplifier, nous estimons le total comme étant le double des éléments actuels
