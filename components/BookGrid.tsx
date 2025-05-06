@@ -117,7 +117,7 @@ export const BookGrid = ({ books, title }: BookGridProps) => {
       ) : (
         <div className={viewMode === 'grid' 
           ? "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6"
-          : "space-y-4"
+          : "grid grid-cols-1 xl:grid-cols-2 gap-4"
         }>
           {filteredBooks.map((book) => (
             <div 

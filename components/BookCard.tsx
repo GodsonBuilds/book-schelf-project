@@ -57,18 +57,18 @@ export const BookCard = ({ book, viewMode = 'grid' }: BookCardProps) => {
         <div className="flex flex-col flex-grow p-4">
           <div className="flex justify-between items-start">
             <div>
-              <h3 className="text-lg font-semibold hover:text-primary transition-colors">
-                {book.title}
-              </h3>
-              
-              <div className="mt-1 text-sm text-gray-600">
+            <h3 className="text-lg font-semibold line-clamp-1 group-hover:text-primary dark:text-gray-100 transition-colors">
+          {book.title}
+        </h3>
+            
+              <div className="mt-1 text-sm text-gray-600 dark:text-gray-300">
                 {book.authors && book.authors.length > 0 
                   ? book.authors.map(author => author.name).join(', ')
                   : 'Auteur inconnu'}
               </div>
             </div>
             
-            <div className="text-sm font-semibold">
+            <div className="text-sm font-semibold dark:text-gray-100">
               {formatPrice()}
             </div>
           </div>
@@ -78,25 +78,26 @@ export const BookCard = ({ book, viewMode = 'grid' }: BookCardProps) => {
             {book.rating && (
               <div className="flex items-center">
                 <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                <span className="ml-1 text-sm font-medium">{book.rating.toFixed(1)}</span>
+                <span className="ml-1 text-sm font-medium dark:text-gray-100">{book.rating.toFixed(1)}</span>
               </div>
             )}
             
-            <div className="text-xs text-gray-500">
+            <div className="text-xs text-gray-500 dark:text-gray-300">
               {book.publisher}
             </div>
           </div>
           
           {/* Description */}
           {book.description && (
-            <p className="mt-2 text-sm text-gray-600 line-clamp-2">
+            <p className="mt-2 text-sm text-gray-600 dark:text-gray-300 line-clamp-2">
               {book.description}
             </p>
           )}
         </div>
       </div>
-    );
+    ); 
   }
+
 
   // Vue en grille (par défaut)
   return (
