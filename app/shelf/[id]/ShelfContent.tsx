@@ -49,7 +49,7 @@ export function ShelfContent({
         </Link>
         
         <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">{currentShelf.title}</h1>
-        <p className="text-gray-600 dark:text-gray-300 mt-2">
+        <p className="text-gray-600 dark:text-gray-300  mt-2">
            Créée par {currentShelf.user.name}
         </p>
       </motion.div>

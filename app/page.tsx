@@ -30,7 +30,7 @@ export default async function Home({
   return (
     <div className="space-y-16">
       {/* Section Hero */}
-      <section className="relative py-20 bg-gradient-to-r from-primary/10 to-primary/5 dark:from-primary/20 dark:to-primary/10">
+      <section className="relative py-20 bg-gradient-to-r from-primary/10 to-primary/5 dark:from-primary/20 dark:to-primary/10 rounded-lg shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
@@ -114,7 +114,7 @@ export default async function Home({
       </section>
 
       {/* Section CTA */}
-      <section className="py-16 bg-primary text-white">
+      <section className="py-16 bg-primary text-white rounded-lg shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-6">
             Commencez votre voyage littéraire

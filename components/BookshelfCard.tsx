@@ -32,7 +32,7 @@ export const BookshelfCard = ({ shelf }: BookshelfCardProps) => {
             </span>
           </div>
           
-          <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
+          <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors dark:text-gray-100">
             {shelf.title}
           </h3>
           
