@@ -79,7 +79,7 @@ export const BookGrid = ({ books, title }: BookGridProps) => {
   return (
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-        <h2 className="text-2xl font-bold text-gray-900">{title}</h2>
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">{title}</h2>
         <div className="flex items-center gap-4 w-full sm:w-auto">
           <Search onSearch={handleSearch} />
           <div className="flex items-center gap-2">
