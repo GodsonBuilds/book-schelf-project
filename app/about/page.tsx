@@ -1,6 +1,6 @@
 export default function AProposPage() {
   return (
-    <div className="max-w-3xl mx-auto px-4 py-10">
+    <div className="max-w-3xl mx-auto px-4 py-10  dark:text-gray-200">
       <h1 className="text-3xl font-bold text-gray-900 mb-6">À propos de BookShelf</h1>
 
       <div className="prose prose-blue max-w-none">
