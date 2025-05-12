@@ -48,10 +48,11 @@ export const BookDetailsModal = ({ book, onClose }: BookDetailsModalProps) => {
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+      className=" z-[9999] flex items-center justify-center w-screen h-screen bg-black bg-opacity-70 overflow-y-auto"
+      style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
       onClick={handleOverlayClick}
     >
-      <div className="bg-white dark:bg-slate-900 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+      <div className="relative bg-white dark:bg-slate-900 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto z-50">
         <div className="p-6">
           <div className="flex justify-between items-start mb-6">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">{book.title}</h2>
